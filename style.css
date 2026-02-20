@@ -1,0 +1,39 @@
+/* 🌧️ EMOJIS EM CASCATA */
+.emoji-chuva {
+    position: fixed;
+    top: -50px;
+    font-size: 24px;
+    pointer-events: none;
+    animation: cair linear infinite;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+.carta {
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
+    background: #fffafc;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    transition: transform 1s ease;
+
+    /* 🍷 BORDA VINHO */
+    border: 3px solid #cc00ff;
+}

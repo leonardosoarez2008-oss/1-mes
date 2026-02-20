@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="style.css">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosso Amor</title>
+<title>Nosso Mês</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
@@ -14,7 +16,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
     text-align: center;
-    background: linear-gradient(135deg, #520d18, #7c001d, #3b0000, #c70000);
+    background: linear-gradient(135deg, #61010f, #4b0011, #3b0000, #e6f2ff);
     background-size: 400% 400%;
     animation: fundo 15s ease infinite;
     color: #8b1e3f;
@@ -74,7 +76,16 @@ button:hover {
     transform: scale(1.08);
     background: #ff4d73;
 }
-
+.soube {
+    margin-top: 60px;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
 /* 💖 NOSSA HISTÓRIA */
 .historia {
     margin-top: 60px;
@@ -140,10 +151,34 @@ button:hover {
 }
 </style>
 </head>
+<script>
+// 🌧️ Emojis que vão cair
+const emojisCascata = ["🦦", "🐝", "🍅"];
+
+function criarEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("emoji-chuva");
+    emoji.innerText = emojisCascata[Math.floor(Math.random() * emojisCascata.length)];
+
+    emoji.style.left = Math.random() * 100 + "vw";
+    emoji.style.animationDuration = (5 + Math.random() * 5) + "s";
+    emoji.style.fontSize = (20 + Math.random() * 15) + "px";
+
+    document.body.appendChild(emoji);
+
+    setTimeout(() => {
+        emoji.remove();
+    }, 10000);
+}
+
+// cria emojis a cada 300ms
+setInterval(criarEmoji, 300);
+</script>
+
 <body>
 
 <div class="container">
-    <h2>Nosso Tempo Juntos 💖</h2>
+    <h2>Nosso Tempo juntinhos 💖</h2>
 
     <div class="timer">
         <div class="box">
@@ -278,7 +313,7 @@ function abrirCarta() {
 
 
 <audio id="musica" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+    <source src="ai amor.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -298,3 +333,20 @@ document.addEventListener("mousemove", iniciarMusica);
 document.addEventListener("click", iniciarMusica);
 document.addEventListener("scroll", iniciarMusica);
 </script>
+<!-- 💘 COMO EU SOUBE QUE ERA VOCÊ -->
+<div class="soube">
+    <h3>Como eu soube que era você 💘</h3>
+    <p>
+A partir do momento em que começamos a conversar, eu senti algo diferente. Mesmo achando que você era um cara, eu sentia que havia algo ali que não era exatamente o que parecia — e meus sentimentos estavam certos. Você era, sim, um homem, mas não era gay… era uma garota trans, um femboy no caso.
+
+E eu preciso confessar uma coisa, meu anjo: eu sempre gostei de femboys :3 Já fazia um tempo, na verdade. Parecia tudo tão estranho para mim, porque eu não me sentia gay, mas gostava mesmo assim. E então você apareceu na minha vida… e eu percebi que era você quem eu estava procurando.
+
+Depois de 17 anos sem ninguém, me sentindo triste em uma madrugada qualquer, eu encontrei você — o amor da minha vida.
+
+Eu quero, um dia, poder me casar com você, meu príncipe. Quero ter você para sempre. Eu vejo em você algo diferente. É como se você entendesse cada assunto que eu falo, cada palavra… você sempre está ali para me responder da melhor forma.
+
+Tudo em você me encanta, meu bem — desde a sua voz, a sua risada, até a cor dos seus olhos, que eu amo tanto. Tudo fica tão perfeito quando estou com você. O mundo parece pausar ao meu redor, e eu só consigo prestar atenção em você e em cada detalhe seu.
+
+Eu te amo muito, meu amor. 💖
+    </p>
+</div>
