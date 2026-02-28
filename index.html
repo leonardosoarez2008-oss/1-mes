@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="style.css">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nosso Mês</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
@@ -76,18 +76,8 @@ button:hover {
     transform: scale(1.08);
     background: #ff4d73;
 }
-.soube {
-    margin-top: 60px;
-    background: rgba(255,255,255,0.9);
-    padding: 30px;
-    border-radius: 25px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-/* 💖 NOSSA HISTÓRIA */
-.historia {
+
+.historia, .soube {
     margin-top: 60px;
     background: rgba(255,255,255,0.9);
     padding: 30px;
@@ -98,20 +88,19 @@ button:hover {
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.historia h3 {
+.historia h3, .soube h3 {
     color: #d6336c;
     margin-bottom: 15px;
 }
 
-.historia p {
+.historia p, .soube p {
     line-height: 1.6;
     font-size: 16px;
 }
 
-/* 💌 CARTAS */
 .carta-container {
     perspective: 1000px;
-    margin-top: 80px; /* MAIS PRA BAIXO */
+    margin-top: 80px;
 }
 
 .carta {
@@ -138,21 +127,9 @@ button:hover {
     margin-bottom: 10px;
 }
 
-.floating {
-    position: absolute;
-    font-size: 20px;
-    animation: subir 7s linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes subir {
-    0% { transform: translateY(100vh); opacity: 1;}
-    100% { transform: translateY(-10vh); opacity: 0;}
-}
 </style>
 </head>
 <script>
-// 🌧️ Emojis que vão cair
 const emojisCascata = ["🦦", "🐝", "🍅"];
 
 function criarEmoji() {
@@ -161,192 +138,112 @@ function criarEmoji() {
     emoji.innerText = emojisCascata[Math.floor(Math.random() * emojisCascata.length)];
 
     emoji.style.left = Math.random() * 100 + "vw";
-    emoji.style.animationDuration = (5 + Math.random() * 5) + "s";
-    emoji.style.fontSize = (20 + Math.random() * 15) + "px";
+    emoji.style.fontSize = (20 + Math.random() * 25) + "px";
+    emoji.style.animationDuration = (4 + Math.random() * 4) + "s";
 
     document.body.appendChild(emoji);
 
     setTimeout(() => {
         emoji.remove();
-    }, 10000);
+    }, 8000);
 }
 
-// cria emojis a cada 300ms
 setInterval(criarEmoji, 300);
 </script>
-
 <body>
 
 <div class="container">
-    <h2>Nosso Tempo juntinhos 💖</h2>
 
-    <div class="timer">
-        <div class="box">
-            <div class="number" id="dias">0</div>
-            <div class="label">Dias</div>
-        </div>
-        <div class="box">
-            <div class="number" id="horas">0</div>
-            <div class="label">Horas</div>
-        </div>
-        <div class="box">
-            <div class="number" id="minutos">0</div>
-            <div class="label">Min</div>
-        </div>
-        <div class="box">
-            <div class="number" id="segundos">0</div>
-            <div class="label">Seg</div>
-        </div>
-    </div>
+<h2>Nosso Tempo juntinhos 💖</h2>
 
-    <button onclick="abrirCarta()">Abrir Cartas 💌</button>
-
-    <!-- 💖 NOSSA HISTÓRIA -->
-    <div class="historia">
-        <h3>Como a gente se conheceu ✨</h3>
-        <p>
-           Foi no dia 28 de janeiro, às 2 da madrugada.
-Você mandou uma mensagem lá no PDA perguntando se alguém estava vendo suas mensagens, e eu, todo inocente, disse que estava.
-
-Então fui te ajudar. Mesmo eu não sendo muito de ajudar os outros, fui assim mesmo. Não sei explicar, mas senti alguma coisa dizendo que eu precisava falar com você. E lá fui eu, no seu PV, te ajudar a passar pelo verificador do Discord.
-
-Depois que deu certo, a gente começou a conversar normalmente. Eu achei que você era um cara gay, lembra? Hehe. Mas aí você me mandou aquela mensagem:
-
-"Eu nasci com bct moço 😭😭😭"
-
-Naquela hora eu fiquei todo bobo, porque jurava que estava falando com um mano.
-
-Depois disso, nossas conversas ficaram mais pessoais. A gente falou dos nossos gostos, das nossas relações passadas… e eu, todo inocente, falei que nunca tinha namorado.
-
-Então você veio com aquela pergunta que mudou tudo:
-
-"Se quer eu? Se tu querer eu te quero."
-
-Eu congelei. Fiquei totalmente incrédulo com o que estava lendo. Meu coração disparou, eu fiquei pensando… e então eu aceitei.
-
-E foi a melhor decisão da minha vida.
-Porque hoje eu sou o homem mais feliz do mundo quando estou com você. 💖
-        </p>
-    </div>
-
-    <!-- CARTAS -->
-    <div class="carta-container">
-        <div class="carta" id="carta1">
-            <div class="titulo">Para meu docinho 💕</div>
-            <p>
-           Oi, meu amor. Como você está? 💕
-
-Hoje nós completamos 1 mês juntinhos, e eu quero te falar algumas coisinhas por essa carta.
-
-Matheo, eu sou muito grato por tudo. Por todos os momentos que passo e ainda vou passar com você. Eu quero estar do seu lado em todos os momentos, desde os felizes até os tristes. Eu te amo muito, meu amor.
-
-Você é a luz da minha vida, é a razão da minha felicidade. Eu durmo e acordo pensando em você. A primeira coisa que eu faço quando acordo é pegar o celular para ver se tem mensagem sua. Eu sempre fico feliz quando vejo uma notificação e percebo que é você. Eu aprecio cada segundinho que passamos conversando, desde as conversas de amor até as do dia a dia — e claro, tem algumas safadezinhas aí também, hehe.
-
-Obrigado mesmo, meu docinho, por ter aparecido na minha vida. Eu quero te abraçar, te beijar, quero te dar o mundo. Esse nosso primeiro mês me fez sentir especial e amado. Eu espero que eu tenha feito você sentir a mesma coisa.
-
-Um dia eu vou aí te ver, mas por enquanto ficaremos apenas por mensagem. Porém, isso não vai impedir nosso amor de crescer cada dia mais. A distância é só a primeira prova de que o nosso amor é forte, é eterno e vai prosperar para sempre.
-
-E um dia, meu amor, iremos morar juntinhos, ter uma família e vamos olhar para trás e ver cada momento que passamos juntos, desde os mais difíceis até os mais felizes.
-
-Pode contar comigo para tudo, meu amor.
-Eu te amo muito, mais do que eu consigo escrever nessa carta. 💖
-            </p>
-        </div>
-    </div>
-
-    <div class="carta-container">
-        <div class="carta" id="carta2">
-            <div class="titulo">Para o Tete 💖</div>
-            <p>
-            Oiii, Tete. Aqui é o Dada 💕
-
-Então, Tete, o Dada quer falar umas coisinhas pra você.
-
-Tete, o Dada te ama muitão. Eu amo cuidar de você, te fazer rir e fazer RPG com você. Eu gosto muito de te fazer companhia e de brincar com você.
-
-O Dada quer estar com o Tete em todos os momentos, até quando o Tete ficar adulto. Sempre que o Tete precisar, é só mandar mensagem pro Dada… menos de madrugada, né Tete? Porque o Dada vai estar dormindo 😴 hehe.
-
-Mas tirando isso, pode contar com o Dada pra tudo. Pra assistir desenho, desenhar, às vezes dormir em call, conversar… qualquer coisa é só pedir pro Dada. Eu vou sempre fazer o máximo por você e estar do seu lado sempre que precisar.
-
-O Dada sempre quer fazer carinho, beijar, até dar papá pro Tete… e um dia isso vai acontecer, hihi 🤭
-
-O Dada te ama muito, Tete.
-Beijos :3 💖
-            </p>
-        </div>
-    </div>
+<div class="timer">
+<div class="box"><div class="number" id="dias">0</div><div class="label">Dias</div></div>
+<div class="box"><div class="number" id="horas">0</div><div class="label">Horas</div></div>
+<div class="box"><div class="number" id="minutos">0</div><div class="label">Min</div></div>
+<div class="box"><div class="number" id="segundos">0</div><div class="label">Seg</div></div>
 </div>
 
-<audio id="musica" loop autoplay>
-    <source src="ai amor.mp3" type="audio/mpeg">
+<button onclick="abrirCarta()">Abrir Cartas 💌</button>
+
+<!-- HISTÓRIA -->
+<div class="historia">
+<h3>Como a gente se conheceu ✨</h3>
+<p>
+Foi no dia 28 de janeiro, às 2 da madrugada. Você mandou uma mensagem lá no PDA perguntando se alguém estava vendo suas mensagens, e eu, todo inocente, disse que estava. Então fui te ajudar. Mesmo eu não sendo muito de ajudar os outros, fui assim mesmo. Não sei explicar, mas senti alguma coisa dizendo que eu precisava falar com você. E lá fui eu, no seu PV, te ajudar a passar pelo verificador do Discord. Depois que deu certo, a gente começou a conversar normalmente. Eu achei que você era um cara gay, lembra? Hehe. Mas aí você me mandou aquela mensagem: "Eu nasci com bct moço 😭😭😭" Naquela hora eu fiquei todo bobo, porque jurava que estava falando com um mano. Depois disso, nossas conversas ficaram mais pessoais. A gente falou dos nossos gostos, das nossas relações passadas… e eu, todo inocente, falei que nunca tinha namorado. Então você veio com aquela pergunta que mudou tudo: "Se quer eu? Se tu querer eu te quero." Eu congelei. Fiquei totalmente incrédulo com o que estava lendo. Meu coração disparou, eu fiquei pensando… e então eu aceitei. E foi a melhor decisão da minha vida. Porque hoje eu sou o homem mais feliz do mundo quando estou com você. 💖
+
+</p>
+</div>
+<div class="foto-historia">
+    <img src="Capturdaar.PNG" alt="Nossa Foto">
+        <p class="legenda-foto">você lembra disso amor?</p>
+</div>
+
+<!-- CARTAS -->
+<div class="carta-container">
+<div class="carta" id="carta1">
+<div class="titulo">Para meu docinho 💕</div>
+<p>Hoje nós completamos 1 mês juntinhos, e eu quero te falar algumas coisinhas por essa carta. Amor, eu sou muito grato por tudo. Por todos os momentos que passo e ainda vou passar com você. Eu quero estar do seu lado em todos os momentos, desde os felizes até os tristes. Eu te amo muito, meu amor. Você é a luz da minha vida, é a razão da minha felicidade. Eu durmo e acordo pensando em você. A primeira coisa que eu faço quando acordo é pegar o celular para ver se tem mensagem sua. Eu sempre fico feliz quando vejo uma notificação e percebo que é você. Eu aprecio cada segundinho que passamos conversando, desde as conversas de amor até as do dia a dia — e claro, tem algumas safadezinhas aí também, hehe. Obrigado mesmo, meu docinho, por ter aparecido na minha vida. Eu quero te abraçar, te beijar, quero te dar o mundo. Esse nosso primeiro mês me fez sentir especial e amado. Eu espero que eu tenha feito você sentir a mesma coisa. Um dia eu vou aí te ver, mas por enquanto ficaremos apenas por mensagem. Porém, isso não vai impedir nosso amor de crescer cada dia mais. A distância é só a primeira prova de que o nosso amor é forte, é eterno e vai prosperar para sempre. E um dia, meu amor, iremos morar juntinhos, ter uma família e vamos olhar para trás e ver cada momento que passamos juntos, desde os mais difíceis até os mais felizes. Pode contar comigo para tudo, meu amor. Eu te amo muito, mais do que eu consigo escrever nessa carta. 💖</p>
+</div>
+</div>
+
+<div class="carta-container">
+<div class="carta" id="carta2">
+<div class="titulo">Para o Tete 💖</div>
+<p>Oiii, Tete. Aqui é o Dada 💕 Então, Tete, o Dada quer falar umas coisinhas pra você. Tete, o Dada te ama muitão. Eu amo cuidar de você, te fazer rir e fazer RPG com você. Eu gosto muito de te fazer companhia e de brincar com você. O Dada quer estar com o Tete em todos os momentos, até quando o Tete ficar adulto. Sempre que o Tete precisar, é só mandar mensagem pro Dada… menos de madrugada, né Tete? Porque o Dada vai estar dormindo 😴 hehe. Mas tirando isso, pode contar com o Dada pra tudo. Pra assistir desenho, desenhar, às vezes dormir em call, conversar… qualquer coisa é só pedir pro Dada. Eu vou sempre fazer o máximo por você e estar do seu lado sempre que precisar. O Dada sempre quer fazer carinho, beijar, até dar papá pro Tete… e um dia isso vai acontecer, hihi 🤭 O Dada te ama muito, Tete. Beijos :3 💖</p>
+</div>
+</div>
+
+<!-- COMO EU SOUBE -->
+<div class="soube">
+<h3>Como eu soube que era você 💘</h3>
+<p>
+Bom, a partir do momento em que você disse o primeiro “eu te amo”, eu soube que era você. Mesmo depois de ter descoberto sua idade de verdade, eu confesso que fiquei um pouco estranho, porque são cinco anos de diferença. Mas quando você me confortou nos momentos difíceis, eu percebi que não precisava ligar para isso, porque o que realmente importa é o amor que sentimos um pelo outro. Foi então que eu entendi que eu te amava de verdade, e continuo te amando cada vez mais, todos os dias. Até o fim da minha vida, eu quero te amar. Quero te amar para todo o sempre. 💖
+</p>
+</div>
+
+</div>
+
+<audio id="musica" loop>
+<source src="ai amor.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 const dataInicio = new Date("2026-01-31T00:00:00");
 
 function atualizarTempo() {
-    const agora = new Date();
-    const diferenca = agora - dataInicio;
+const agora = new Date();
+const diferenca = agora - dataInicio;
 
-    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
-    const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
-    const segundos = Math.floor((diferenca / 1000) % 60);
+const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+const segundos = Math.floor((diferenca / 1000) % 60);
 
-    document.getElementById("dias").innerText = dias;
-    document.getElementById("horas").innerText = horas;
-    document.getElementById("minutos").innerText = minutos;
-    document.getElementById("segundos").innerText = segundos;
+document.getElementById("dias").innerText = dias;
+document.getElementById("horas").innerText = horas;
+document.getElementById("minutos").innerText = minutos;
+document.getElementById("segundos").innerText = segundos;
 }
 
 setInterval(atualizarTempo, 1000);
 atualizarTempo();
 
 function abrirCarta() {
-    document.getElementById("carta1").classList.toggle("aberta");
-    document.getElementById("carta2").classList.toggle("aberta");
+document.getElementById("carta1").classList.toggle("aberta");
+document.getElementById("carta2").classList.toggle("aberta");
 }
+
+// controle da música
+const musica = document.getElementById("musica");
+musica.volume = 0.3;
+
+function iniciarMusica() {
+musica.play();
+document.removeEventListener("click", iniciarMusica);
+}
+
+document.addEventListener("click", iniciarMusica);
 </script>
 
 </body>
 </html>
-
-
-<audio id="musica" loop>
-    <source src="ai amor.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const musica = document.getElementById("musica");
-
-// 🔊 volume ajustado aqui (mude se quiser)
-musica.volume = 0.3; 
-
-function iniciarMusica() {
-    musica.play();
-    document.removeEventListener("mousemove", iniciarMusica);
-    document.removeEventListener("click", iniciarMusica);
-    document.removeEventListener("scroll", iniciarMusica);
-}
-
-document.addEventListener("mousemove", iniciarMusica);
-document.addEventListener("click", iniciarMusica);
-document.addEventListener("scroll", iniciarMusica);
-</script>
-<!-- 💘 COMO EU SOUBE QUE ERA VOCÊ -->
-<div class="soube">
-    <h3>Como eu soube que era você 💘</h3>
-    <p>
-A partir do momento em que começamos a conversar, eu senti algo diferente. Mesmo achando que você era um cara, eu sentia que havia algo ali que não era exatamente o que parecia — e meus sentimentos estavam certos. Você era, sim, um homem, mas não era gay… era uma garota trans, um femboy no caso.
-
-E eu preciso confessar uma coisa, meu anjo: eu sempre gostei de femboys :3 Já fazia um tempo, na verdade. Parecia tudo tão estranho para mim, porque eu não me sentia gay, mas gostava mesmo assim. E então você apareceu na minha vida… e eu percebi que era você quem eu estava procurando.
-
-Depois de 17 anos sem ninguém, me sentindo triste em uma madrugada qualquer, eu encontrei você — o amor da minha vida.
-
-Eu quero, um dia, poder me casar com você, meu príncipe. Quero ter você para sempre. Eu vejo em você algo diferente. É como se você entendesse cada assunto que eu falo, cada palavra… você sempre está ali para me responder da melhor forma.
-
-Tudo em você me encanta, meu bem — desde a sua voz, a sua risada, até a cor dos seus olhos, que eu amo tanto. Tudo fica tão perfeito quando estou com você. O mundo parece pausar ao meu redor, e eu só consigo prestar atenção em você e em cada detalhe seu.
-
-Eu te amo muito, meu amor. 💖
-    </p>
-</div>
